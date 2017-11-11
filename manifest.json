@@ -1,14 +1,18 @@
 {
   "name": "QuickGitbook for Github",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "manifest_version": 2,
   "description": "View your gitbook quickly",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "author": "baurine",
   "content_scripts": [
       {
-          "matches": ["https://github.com/*/*"],
-          "js": ["add-link.js"]
-          // make it run at default document_idle
-          // "run_at":"document_end"
+        "matches": ["https://github.com/*/*"],
+        "js": ["add-link.js"]
       }
   ]
 }
