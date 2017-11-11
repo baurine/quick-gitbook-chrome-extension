@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "manifest_version": 2,
   "description": "View your gitbook quickly",
-  "content_scripts":[
+  "content_scripts": [
       {
           "matches": ["https://github.com/*/*"],
           "js": ["add-link.js"]
