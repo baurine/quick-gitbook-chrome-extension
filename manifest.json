@@ -1,0 +1,14 @@
+{
+  "name": "QuickGitbook for Github",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "View your gitbook quickly",
+  "content_scripts":[
+      {
+          "matches": ["https://github.com/*/*"],
+          "js": ["add-link.js"]
+          // make it run at default document_idle
+          // "run_at":"document_end"
+      }
+  ]
+}
