@@ -1,0 +1,1 @@
+# QuickGitbook Chrome Extension
