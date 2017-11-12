@@ -15,5 +15,8 @@
         "matches": ["https://github.com/*/*"],
         "js": ["add-link.js"]
       }
+  ],
+  "permissions": [
+    "storage"
   ]
 }

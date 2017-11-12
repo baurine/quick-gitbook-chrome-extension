@@ -1,7 +1,4 @@
-function getHost() {
-  // TODO: make host configurable
-  return "http://quickgitbook.com"
-}
+var DEF_HOST = "http://quickgitbook.com"
 
 function log(msg) {
   console.log("QuickGitbook extension:", msg)
@@ -62,15 +59,19 @@ function addLink() {
   var existedLink = repoActions.querySelector("li#view-gitbook")
   if (existedLink) return
 
-  var link = document.createElement("a")
-  link.id = "view-gitbook"
-  link.classList = "btn btn-sm"
-  link.href = getHost() + repoName
-  link.target = "_blank"
-  link.innerHTML = "View Gitbook"
-  var li = document.createElement("li")
-  li.appendChild(link)
-  repoActions.prepend(li)
+  chrome.storage.local.get(["options_host"], function(items) {
+    host = items.options_host || DEF_HOST
+
+    var link = document.createElement("a")
+    link.id = "view-gitbook"
+    link.classList = "btn btn-sm"
+    link.href = host + repoName
+    link.target = "_blank"
+    link.innerHTML = "View Gitbook"
+    var li = document.createElement("li")
+    li.appendChild(link)
+    repoActions.prepend(li)
+  })
 }
 
 var UNKNOWN = 0, NO = 1, YES = 2
