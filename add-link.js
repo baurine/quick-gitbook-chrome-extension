@@ -4,14 +4,14 @@ function getHost() {
 }
 
 function log(msg) {
-  console.log('QuickGitbook extension:', msg)
+  console.log("QuickGitbook extension:", msg)
 }
 
 // https://stackoverflow.com/questions/2844565/is-there-a-javascript-jquery-dom-change-listener
 // https://developer.mozilla.org/zh-CN/docs/Web/API/MutationObserver
 // http://www.jianshu.com/p/b5c9e4c7b1e1
 function listenDOMChange() {
-  var target = document.querySelector('#js-repo-pjax-container')
+  var target = document.querySelector("#js-repo-pjax-container")
   if (!target) return
   var MutationObserver = window.MutationObserver || window.WebKitMutationObserver
   var observer = new MutationObserver(function(mutations) {
@@ -43,7 +43,7 @@ function addLink() {
   // get repo name
   var repoLink = document.querySelector("h1.public strong[itemprop='name'] a")
   if (!repoLink) {
-    log('this is not a repo page')
+    log("this is not a repo page")
     return
   }
   // repoLink.href example: "https://github.com/baurine/study-note"
@@ -54,7 +54,7 @@ function addLink() {
   // add link
   var repoActions = document.querySelector("ul.pagehead-actions")
   if (!repoActions) {
-    log('there is no action buttons')
+    log("there is no action buttons")
     return
   }
 
@@ -76,7 +76,7 @@ function addLink() {
 var UNKNOWN = 0, NO = 1, YES = 2
 var repoIsGitbook = UNKNOWN
 function main() {
-  log('load')
+  log("load")
 
   prepareAddLink()
   if (repoIsGitbook !== NO) listenDOMChange()
