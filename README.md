@@ -15,3 +15,7 @@ In above page (<https://github.com/baurine/study-note>), after click the "View G
 - [x] Only show "View Gitbook" link when contains "SUMMARY.md"
 - [x] Publish to chrome store
 - [x] Make "http://quickgitbook.com" host configurable, because you maybe deploy the "QuickGitbook" project to yourself server
+
+## Note
+
+- [How to Write a Chrome Extension](./note/how-to-write-a-chrome-extension.md)
